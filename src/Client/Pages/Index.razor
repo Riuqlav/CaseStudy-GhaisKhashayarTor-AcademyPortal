@@ -1,0 +1,36 @@
+﻿@page "/"
+@using CaseStudy.Shared
+@inject NavigationManager Nav
+@inject ISnackbar SnackBar
+@inject HttpClient Http 
+
+<PageTitle>BEERS!</PageTitle>
+<MudText Typo="Typo.h3" GutterBottom="true">BEERS!</MudText>
+<MudText Class="mb-8">This is the list of beers fetched from punkAPI</MudText>
+@if (beers == null)
+{
+    <MudProgressCircular Color="Color.Default" Indeterminate="true" />
+}
+else
+{
+    <MudTable Items="beers" T="Beer" Hover="true" SortLabel="Sort By" Elevation="0" OnRowClick="@RowClicked">
+        <HeaderContent>
+            <MudTh><MudTableSortLabel SortBy="new Func<Beer, object>(x=>x.Name)">Name</MudTableSortLabel></MudTh>            
+            <MudTh><MudTableSortLabel SortBy="new Func<Beer, object>(x=>x.Description)">Description</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<Beer, object>(x=>x.Abv)">ABV</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel InitialDirection="SortDirection.Ascending" SortBy="new Func<Beer, object>(x=>x.FirstBrewed)">First Brewed</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<Beer, object>(x=>x.Volume.Value)">Volume</MudTableSortLabel></MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Name">@context.Name</MudTd>
+            <MudTd DataLabel="Description">@context.Description</MudTd>
+            <MudTd DataLabel="ABV">@context.Abv</MudTd>
+            <MudTd DataLabel="First Brewed">@context.FirstBrewed</MudTd>
+            <MudTd DataLabel="Volume">@context.Volume.Value</MudTd>
+        </RowTemplate>
+        <PagerContent>
+            <MudTablePager PageSizeOptions="new int[]{10, 50, 100}" />
+        </PagerContent>
+    </MudTable>
+    <MudNumericField @bind-Value="BeerToDelete" Label="Beer to delete" Variant="Variant.Outlined"/><MudButton OnClick="@(() => RemoveABeer(BeerToDelete))" Color="Color.Error" Variant="Variant.Outlined">Delete beer no: @BeerToDelete</MudButton>
+}
