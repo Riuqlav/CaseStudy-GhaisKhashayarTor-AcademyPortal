@@ -1,8 +1,4 @@
-# Case Study
-
-Please use this template repository as a base for your case study. Feel free to remove any (or all) of the projects that are included if you want a clean state, but please somewhat follow the folder structure defined in the project (and below).
-
-## ⚠️ Please name your repo CaseStudy-StudentNames-ProjectName ⚠️
+# Case Study - Ghais, Khasayar, and Tor - Academy Portal
 
 ## Introduction
 
@@ -11,6 +7,7 @@ Please use this template repository as a base for your case study. Feel free to 
 ## How to run it and any prerequisites/dependencies needed
 
 ## Link to project board
+https://github.com/IkommAcademy2022/CaseStudy-GhaisKhashayarTor-AcademyPortal/projects/1
 
 ## Project structure:
 GithubWorkflows (Place any and all github actions related stuff here)
