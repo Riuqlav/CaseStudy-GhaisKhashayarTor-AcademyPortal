@@ -1,4 +1,4 @@
-# Case Study - Ghais, Khasayar, and Tor - Academy Portal
+# Case Study - Ghais, Khashayar, and Tor - Academy Portal
 
 ## Introduction
 
