@@ -1,7 +1,5 @@
 # Case Study - Ghais, Khashayar, and Tor - Academy Portal
 
-## Introduction
-
 ## Description of project
 Creating a portal website for the Ikomm Academy, containing things like personal webpages for the participants, calendar to view upcoming/previous lectures, and relevant news.
 
