@@ -7,9 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Exceptions\**" />
     <Compile Remove="Repository\**" />
+    <Content Remove="Exceptions\**" />
     <Content Remove="Repository\**" />
+    <EmbeddedResource Remove="Exceptions\**" />
     <EmbeddedResource Remove="Repository\**" />
+    <None Remove="Exceptions\**" />
     <None Remove="Repository\**" />
   </ItemGroup>
 
@@ -22,11 +26,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Client\CaseStudy.Client.csproj" />
     <ProjectReference Include="..\Shared\CaseStudy.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Exceptions\" />
   </ItemGroup>
 
 

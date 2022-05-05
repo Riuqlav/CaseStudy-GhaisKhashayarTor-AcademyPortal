@@ -38,7 +38,6 @@ builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializ
 builder.Services.AddTransient<IParticipantRepository, ParticipantRepository>();
 
 var app = builder.Build();
-
 // Swagger 
 app.UseSwaggerUI();
 
