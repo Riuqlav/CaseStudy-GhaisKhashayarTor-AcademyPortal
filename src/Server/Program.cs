@@ -1,4 +1,6 @@
 using CaseStudy.Server.Models;
+using CaseStudy.Server.Repositories;
+using CaseStudy.Server.Repository;
 using CaseStudy.Shared;
 using Microsoft.AspNetCore.ResponseCompression;
 using MongoDB.Driver;
@@ -27,6 +29,9 @@ builder.Services.AddSingleton<IMongoDatabase>(options => {
 
 // Handling Bson Name properties 
 builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
+
+// Registering the repository .. Acording to Erik, when is possible Transient is a better choice
+builder.Services.AddTransient<IParticipantRepository, ParticipantRepository>();
 
 var app = builder.Build();
 

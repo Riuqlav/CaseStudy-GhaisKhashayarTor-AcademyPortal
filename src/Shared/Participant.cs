@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CaseStudy.Shared;
 
-internal class Participants
+public class Participant
 {
     [BsonId]
     public int Id { get; set; }
