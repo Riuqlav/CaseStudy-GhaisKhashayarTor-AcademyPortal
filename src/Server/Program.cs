@@ -1,4 +1,3 @@
-using CaseStudy.Server.Repository;
 using CaseStudy.Shared;
 using Microsoft.AspNetCore.ResponseCompression;
 
@@ -7,11 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
-builder.Services.AddSingleton<IRepository<Beer>,BeerRepository>();
 var app = builder.Build();
 
-//Seed Database-> this is ugly and you should not care about this :)
-await new BeerDBSeeder(app.Services.GetRequiredService<IRepository<Beer>>()).Seed();
 
 
 // Configure the HTTP request pipeline.
