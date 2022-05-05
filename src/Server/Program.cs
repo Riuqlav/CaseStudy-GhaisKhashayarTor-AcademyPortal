@@ -11,6 +11,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
+// Adding requirements for swagger Core
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 // Register Mongo connection info -- registered in the Dependency Injection (DI) container
 builder.Services.Configure<MongoDBSettings>(
     builder.Configuration.GetSection("MongoDBSettings")
@@ -35,6 +39,9 @@ builder.Services.AddTransient<IParticipantRepository, ParticipantRepository>();
 
 var app = builder.Build();
 
+// Swagger 
+app.UseSwaggerUI();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -46,6 +53,9 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+//Swagger 
+app.UseSwagger();
 
 app.UseHttpsRedirection();
 
