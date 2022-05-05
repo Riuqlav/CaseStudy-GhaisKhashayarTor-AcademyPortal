@@ -4,7 +4,7 @@
 Creating a portal website for the Ikomm Academy, containing things like personal webpages for the participants, calendar to view upcoming/previous lectures, and relevant news.
 
 ## How to run it and any prerequisites/dependencies needed
-TBD
+
 
 ## Link to project board
 https://github.com/IkommAcademy2022/CaseStudy-GhaisKhashayarTor-AcademyPortal/projects/1
