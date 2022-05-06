@@ -61,7 +61,7 @@ public class ParticipantController : ControllerBase
     public async Task<IActionResult> Delete(int id)
     {
         var participantToDelete = await this.iparticipantRepository.GetByIdAsync(id);
-        if (participantToDelete is null)// I didnt know you can use is.. feels like python now :D
+        if (participantToDelete is null)// I didn't know you can use is.. feels like python now :D
         {
             return NotFound();
         }
