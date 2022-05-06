@@ -34,7 +34,7 @@ builder.Services.AddSingleton<IMongoDatabase>(options => {
 // Handling Bson Name properties 
 builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
 
-// Registering the repository .. Acording to Erik, when is possible Transient is a better choice
+// Registering the repository .. According to Erik, when is possible Transient is a better choice
 builder.Services.AddTransient<IParticipantRepository, ParticipantRepository>();
 
 var app = builder.Build();
